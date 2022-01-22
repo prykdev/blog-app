@@ -11,11 +11,10 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get("short.grawish.com/api/posts");
-      const data = await res.json();
+      const {data} = await axios.get("/api/posts");
       console.log(data);
 
-      // setPosts(res.data);
+      setPosts(data);
     };
     fetchPosts();
   }, []);
